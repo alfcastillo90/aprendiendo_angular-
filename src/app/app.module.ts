@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { MiComponenteComponent } from './components/mi-componente/mi-componente.component';
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { PruebasComponent } from './components/pruebas/pruebas.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MiComponenteComponent,
     PeliculasComponent,
-    PruebasComponent
+    PruebasComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule
