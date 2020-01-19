@@ -9,23 +9,23 @@
       </div>
 
       <!-- MENU -->
-      <nav id="menu">
+      <nav  id="menu">
           <ul>
               <li>
-                  <a href="home">Inicio</a>
+                  <a [routerLink]="['/home']"  [routerLinkActive]="['active']">Inicio</a>
               </li>
               <li>
-                  <a href="blog">Blog</a>
+                  <a [routerLink]="['/blog']" [routerLinkActive]="['active']">Blog</a>
               </li>
               <li>
-                  <a href="formulario">Formulario</a>
+                  <a [routerLink]="['/formulario']" [routerLinkActive]="['active']" >Formulario</a>
               </li>
               <li>
-                  <a href="#">Pagina 1</a>
+                  <a [routerLink]="['/peliculas']" [routerLinkActive]="['active']" >Películas</a>
               </li>
               <li>
-                  <a href="#">Pagina 2</a>
-              </li>
+                <a [routerLink]="['/paginas']" [routerLinkActive]="['active']" >Página</a>
+            </li>
           </ul>
       </nav>
 

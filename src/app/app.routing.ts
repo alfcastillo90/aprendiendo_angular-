@@ -15,7 +15,7 @@ const appRoutes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'formulario', component: FormularioComponent },
   { path: 'peliculas', component: PeliculasComponent },
-  { path: 'paginia-de-pruebas', component: PaginaComponent },
+  { path: 'paginas', component: PaginaComponent },
   { path: '**', component: ErrorComponent }
 ];
 // Exportar el modulo de rutas
