@@ -21,9 +21,12 @@
         Hace 5 minutos
       </span>
       <span class="year" 
-        [class.year-green]='pelicula.year > 2016'
-        [class.year-red]='pelicula.year < 2017'>
-        {{pelicula.year}}</span>
+        [ngClass]="{
+          'year-green':pelicula.year>2016,
+          'year-red':pelicula.year<2017
+        }">
+        {{pelicula.year}}
+      </span>
       <div class="clearfix"></div>
   </article>
   </div>
