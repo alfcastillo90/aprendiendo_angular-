@@ -1,5 +1,5 @@
 <h1 class="subheader">Películas</h1>
-  <h2>{{titulo}}</h2>
+  <!-- <h2>{{titulo}}</h2>
   <p>peliculas works!</p>
   <button (click)="cambiarTitulo()">pulsame</button>
   <hr/>
@@ -8,7 +8,7 @@
   <hr/>
   <h2>Número de películas</h2>
   {{peliculas.length}}
-  <hr/>
+  <hr/> -->
 <section id="content">
   <h2 class="subheader">Listado de películas</h2>
   <div id="articles" *ngIf="peliculas">
@@ -16,7 +16,8 @@
       <div class="image-wrap">
           <img src="{{pelicula.image}}" alt="{{pelicula.title}}" />
       </div>
-      <h3 class="subheader">{{i}} {{pelicula.titulo}}</h3>
+      <h3 class="subheader">{{i}} {{pelicula.title}}</h3>
+      <span class="year" [style.background]="pelicula.year > 2016 ? 'green' : 'red'">{{pelicula.year}}</span>
       <div class="clearfix"></div>
   </article>
   </div>
