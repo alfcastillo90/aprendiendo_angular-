@@ -1,4 +1,24 @@
 <h1 class="subheader">Películas</h1>
-<h2>{{titulo}}</h2>
-<p>peliculas works!</p>
-<button (click)="cambiarTitulo()">pulsame</button>
+  <h2>{{titulo}}</h2>
+  <p>peliculas works!</p>
+  <button (click)="cambiarTitulo()">pulsame</button>
+  <hr/>
+  <h2>Primera película</h2>
+  {{peliculas[0].title}}
+  <hr/>
+  <h2>Número de películas</h2>
+  {{peliculas.length}}
+  <hr/>
+<section id="content">
+  <h2 class="subheader">Listado de películas</h2>
+  <div id="articles" *ngIf="peliculas">
+    <article class="article-item article-detail" *ngFor="let pelicula of peliculas; let i = index">
+      <div class="image-wrap">
+          <img src="{{pelicula.image}}" alt="{{pelicula.title}}" />
+      </div>
+      <h3 class="subheader">{{i}} {{pelicula.titulo}}</h3>
+      <div class="clearfix"></div>
+  </article>
+  </div>
+</section>
+
