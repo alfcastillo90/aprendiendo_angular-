@@ -9,6 +9,8 @@ export class PeliculasComponent implements OnInit, DoCheck, OnDestroy {
 
   public titulo: string;
   public peliculas: Pelicula[];
+  public favorita: Pelicula;
+  public fecha: any;
 
   constructor() {
     this.titulo = 'Componente peliculas';
@@ -20,6 +22,7 @@ export class PeliculasComponent implements OnInit, DoCheck, OnDestroy {
       // tslint:disable-next-line:max-line-length
       new Pelicula('Batman vs Superman', 2018, 'https://vignette.wikia.nocookie.net/doblaje/images/d/de/Batman_vs_Superman_Poster_Final.png/revision/latest?cb=20160326040156&path-prefix=es')
     ];
+    this.fecha = new Date(2020, 9, 2);
   }
 
   ngOnInit() {
@@ -36,6 +39,10 @@ export class PeliculasComponent implements OnInit, DoCheck, OnDestroy {
 
   ngOnDestroy() {
     console.log('el componente se va a eliminar de la ejecucion');
+  }
+
+  mostrarFavorita(event) {
+    this.favorita = event.pelicula;
   }
 
 }
