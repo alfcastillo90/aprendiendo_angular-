@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing, appRoutingProviders } from './app.routing';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MiComponenteComponent } from './components/mi-componente/mi-componente.component';
@@ -16,6 +17,8 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { PaginaComponent } from './components/pagina/pagina.component';
 import { PruebasDirective } from './components/pruebas.directive';
 import { ErrorComponent } from './components/error/error.component';
+import { PeliculaComponent } from './components/pelicula/pelicula.component';
+import { EsParPipe } from './pipes/espar.pipe';
 
 @NgModule({
   declarations: [
@@ -32,11 +35,14 @@ import { ErrorComponent } from './components/error/error.component';
     FormularioComponent,
     PaginaComponent,
     PruebasDirective,
-    ErrorComponent
+    ErrorComponent,
+    PeliculaComponent,
+    EsParPipe
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    FormsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
