@@ -1,9 +1,12 @@
 import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 import { Pelicula } from '../../models/peliculas';
+import { PeliculaService } from '../../services/peliculas.service';
+
 @Component({
   selector: 'app-peliculas',
   templateUrl: './peliculas.component.html',
-  styleUrls: ['./peliculas.component.css']
+  styleUrls: ['./peliculas.component.css'],
+  providers: [PeliculaService]
 })
 export class PeliculasComponent implements OnInit, DoCheck, OnDestroy {
 
@@ -12,21 +15,19 @@ export class PeliculasComponent implements OnInit, DoCheck, OnDestroy {
   public favorita: Pelicula;
   public fecha: any;
 
-  constructor() {
+  constructor(
+    // tslint:disable-next-line: variable-name
+    private _peliculaService: PeliculaService
+  ) {
     this.titulo = 'Componente peliculas';
-    this.peliculas =  [
-      // tslint:disable-next-line:max-line-length
-      new Pelicula('Los vengadores: Endgame', 2016, 'https://as.com/tikitakas/imagenes/2019/04/26/portada/1556258369_131914_1556258703_noticia_normal.jpg'),
-      // tslint:disable-next-line:max-line-length
-      new Pelicula('Spiderman 4', 2017, 'https://as.com/meristation/imagenes/2019/08/25/noticias/1566717212_191664_1566717436_noticia_normal.jpg'),
-      // tslint:disable-next-line:max-line-length
-      new Pelicula('Batman vs Superman', 2018, 'https://vignette.wikia.nocookie.net/doblaje/images/d/de/Batman_vs_Superman_Poster_Final.png/revision/latest?cb=20160326040156&path-prefix=es')
-    ];
+    this.peliculas = this._peliculaService.getPeliculas();
     this.fecha = new Date(2020, 9, 2);
   }
 
   ngOnInit() {
     console.log('componente iniciado');
+    console.log(this.peliculas);
+    console.log(this._peliculaService.holaMundo());
   }
 
   ngDoCheck() {

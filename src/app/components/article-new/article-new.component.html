@@ -1,0 +1,44 @@
+<div class="center">
+    <section id="content">
+        <h1 class="subheader">{{ pageTitle }}</h1>
+
+        <form class="mid-form" #articleForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="titulo">Título</label>
+                <input type="text" name="title" #title="ngModel" [(ngModel)]="article.title" required/>
+            </div>
+            
+            <small *ngIf="!title.valid && title.touched">
+                El título no es valído
+            </small>
+
+            <div class="form-group">
+                <label for="content">Contenido</label>
+                <textarea name="content" #content="ngModel" [(ngModel)]="article.content" required></textarea>
+            </div>
+
+            <small *ngIf="!content.valid && content.touched">
+                El contenido no es valído
+            </small>
+
+            <div class="form-group">
+                <div *ngIf="isEdit" class="image-thumb">
+                    <img *ngIf="!article.image" src="assets/images/angular.png" alt="{{ article.title }}"/>
+                    <img src="{{url + 'get-image/' + article.image }}" alt="{{ article.title }}" *ngIf="article.image"/>
+                </div>
+
+                <angular-file-uploader 
+                [config]="afuConfig"
+                (ApiResponse)="imageUpload($event)"
+                ></angular-file-uploader>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <input type="submit" value="Guardar" class="btn btn-success" [disabled]="articleForm.invalid" />
+
+        </form>
+    </section>
+    <app-sidebar></app-sidebar>
+    <div class="clearfix"></div>
+</div>

@@ -3,15 +3,6 @@
     <section id="content">
         <h1 class="subheader">Formulario</h1>
 
-        <div id="datos-al-vuelo" *ngIf="user.nombre">
-            <ul>
-                <li>{{ user.nombre }}</li>
-                <li> {{ user.apellido }} </li>
-                <li> {{ user.bio }} </li>
-                <li> {{ user.genero }} </li>
-            </ul>
-        </div>
-
         <form class="mid-form" #userForm="ngForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="nombre">Nombre</label>
@@ -58,7 +49,8 @@
 
         <h2 class="subheader">Eventos</h2>
         <button (click)="hasDadoClick()">¡Dale clic!</button>
-        <input type="text" [(ngModel)]="campo" (blur)="hasSalido()" (keyup.enter)="hasDadoEnter()">
+        <input type="text" [(ngModel)]="campo" (keyup.enter)="hasDadoEnter()">
+        <!-- <input type="text" [(ngModel)]="campo" (blur)="hasSalido()"> -->
         {{ campo }}
 
     </section>
